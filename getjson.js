@@ -1,24 +1,23 @@
-font_page = function() {
-        loadJSON('http://www.religiouslibertyindex.org/api/corporations',
-            function(data) {
-                if (data == null) {
-                    console.log('something is wrong man!);
-                }
-                //console.log(data);
-                var d, i;
-                for (i = 0; i < data.length; i++) {
-                    d = data[i];
-                    if (d.completedOn != null) {
-                      document.getElementById('fplist').innerHTML += '<div class="col-md-3"><div class="card"><div class="corner-score"><div class="check-sc"></div><span>' + d.totalScore +
-                      '</span>Scored a</div><a class="company-image" href="' + 'http://www.religiouslibertyindex.org/breakdown.html?surveycode=' + d.surveyCode + '"><img src="' + d.logo + '" /></a><span><a class="btn btn-primary btn-block" href="' + 'http://www.religiouslibertyindex.org/breakdown.html?surveycode=' + d.surveyCode + '">SEE A BREAKDOWN</a></span></div></div>';
-                    }
-                }
-                //alert('loaded');
-                $('#fplist').addClass('done');
-                //document.getElementById('loading').style.display = 'none';
-            },
-            function(xhr) {
-                console.error(xhr);
+getSomeJason = function() {
+    loadJSON('yourjson.url',
+      function(data) {
+        if (data == null) {
+          console.log('something went wrong man!!  NO FILE FOUND!!!!');
             }
-        );
+            //log your data to the console.
+            console.log(data);
+          var d, i;
+          for (i = 0; i < data.length; i++) {
+            d = data[i];
+            if (d.completedOn != null) {
+              //do some for every item that's looped though.
+              document.getElementById('yourElementID').innerHTML += data.yourobject + '<span> plus some html</span>':
+            }
+          }
+          //run_stuff_when_it_done();
+        },
+        function(xhr) {
+          console.error(xhr);
+        }
+      );
     }
