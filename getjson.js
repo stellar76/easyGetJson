@@ -1,4 +1,4 @@
-getSomeJason = function() {
+getSomeJson = function() {
     loadJSON('yourjson.url',
       function(data) {
         if (data == null) {
